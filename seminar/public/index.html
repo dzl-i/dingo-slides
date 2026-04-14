@@ -46,10 +46,163 @@ custom_theme = &ldquo;reveal-hugo/themes/sunblind.css&rdquo;</p>
 <section data-shortcode-section>
 <h2 id="statement-of-contribution">Statement of Contribution</h2>
 </section><section>
-<p>test</p>
+<h3 id="acknowledgements">Acknowledgements</h3>
+<!-- <ul>
+  <li class="fragment fade-up">One</li>
+  <li class="fragment fade-up">Two</li>
+  <li class="fragment fade-up">Three</li>
+</ul> -->
+<ul>
+<li>Dr. Peter Brown (Supervisor)</li>
+<li>Jayden Lang (Previous contributor to CSP)</li>
+<li>Samuel Zheng (Previous contributor to mobile development)</li>
+</ul>
+</section><section>
+<h3 id="use-of-ai">Use of AI</h3>
+<p>Generate health recommendations</p>
+<figure><img src="/ai-recommendations.png" height="400px">
+</figure>
+</section><section>
+<h3 id="use-of-ai-1">Use of AI</h3>
+<p>Generate sample data</p>
+<figure><img src="/ai-sample-data.png" height="160px">
+</figure>
+<figure><img src="/ai-sample-data-sc.png" height="200px">
+</figure>
 
 </section>
 </section><section>
+
+
+<section data-shortcode-section>
+<h2 id="project-context-and-background">Project Context and Background</h2>
+<blockquote>
+<p>Cancer Survivorship Passport (CSP)</p>
+</blockquote>
+</section><section>
+<h3 id="cancer-survivorship-care">Cancer Survivorship Care</h3>
+<p>ongoing health management and support provided to individuals from the time of a cancer diagnosis through the rest of their lives (National Cancer Institute, 2024)</p>
+<p><span class='fragment ' >care does not end when treatment is complete</span></p>
+</section><section>
+<h3 id="cancer-survivorship-passport">Cancer Survivorship Passport</h3>
+<p>a personalised summary document that contains a survivor’s past cancer diagnosis and treatments received</p>
+<aside class="notes"><p>treatments received such as chemotherapy doses, radiation fields, surgeries, and tailored recommendations for long-term follow-up care</p>
+</aside>
+</section><section>
+<!-- ### Cancer Survivorship Passport -->
+<figure><img src="/csp-example.png" height="550px">
+</figure>
+<p>example: Survivorship Passport (SurPass) from EU</p>
+</section><section>
+<h3 id="so-why-is-it-important">so, why is it important?</h3>
+</section><section>
+<h3 id="patients">patients</h3>
+<ul>
+<li>at risk of recurrence or new primary cancers</li>
+<li>also at risk of long-term and late effects of treatment</li>
+<li>receive care from multiple oncologists/specialists</li>
+</ul>
+<blockquote>
+<p>patients need continuous monitoring</p>
+</blockquote>
+</section><section>
+<p>what if they switch to another oncologist?</p>
+<p><span class='fragment ' >and if they are in a different hospital?</span></p>
+<p><span class='fragment ' >in a different country?</span></p>
+</section><section>
+<h3 id="clinicians">clinicians</h3>
+<ul>
+<li>needs to know full context before they can suggest treatment</li>
+<li>can ensure monitoring is consistent and coordinated</li>
+</ul>
+</section><section>
+<h3 id="beyond-that">beyond that</h3>
+<ul>
+<li>help patients transition from active treatment into life afterwards</li>
+</ul>
+<aside class="notes"><p>promote healthy behaviours, monitor for complications or recurrence, and improve long-term outcomes</p>
+</aside>
+</section><section>
+<h3 id="recap">recap</h3>
+<blockquote>
+<p>problems</p>
+</blockquote>
+<ul>
+<li>need for long-term survivorship care</li>
+<li>need for monitoring patients
+<ul>
+<li>and patients to monitor their own needs</li>
+</ul>
+</li>
+<li>coordination between clinicians</li>
+<li>a standard source-of-truth for patient&rsquo;s care</li>
+</ul>
+</section><section>
+<p>Cancer Survivorship Passport is the solution to these problems&hellip;</p>
+<p><span class='fragment ' >but, CSP is not too useful if only clinicians can access them and stored in a single hospital</span></p>
+</section><section>
+<h3 id="problem-statement">problem statement</h3>
+<p>Existing cancer survivorship passports are primarily clinician-facing, leaving patients without an accessible platform to view their health information, track medications, and manage long-term follow-up care.</p>
+</section><section>
+<h3 id="solution">solution</h3>
+<p>a mobile version of the Cancer Survivorship Passport</p>
+</section><section>
+<h3 id="features">features</h3>
+<ul>
+<li>view detailed data about their care</li>
+<li>view appointments and medication schedules</li>
+<li>notifications for reminder</li>
+<li>view and export health passport</li>
+</ul>
+<p><span class='fragment ' >many more…</span></p>
+
+</section>
+</section><section>
+
+
+<section data-shortcode-section>
+<h2 id="technical-background">Technical Background</h2>
+<blockquote>
+<p>a deeper dive on the technical aspect</p>
+</blockquote>
+</section><section>
+<h3 id="standards-and-laws">Standards and Laws</h3>
+<ul>
+<li>Health Level Seven (HL7)
+<ul>
+<li>Fast Healthcare Interoperability Resources (FHIR)</li>
+</ul>
+</li>
+<li>Australian Privacy Act</li>
+</ul>
+<aside class="notes"><p>FHIR is the newer HL7 standard designed for modern web and mobile use. It represents clinical data as modular resources that can be exchanged using REST APIs and JSON or XML.</p>
+</aside>
+</section><section>
+<h3 id="data-flow">Data Flow</h3>
+<figure><img src="/data-flow.png" height="550px">
+</figure>
+</section><section>
+<h3 id="cloud-architecture">cloud architecture</h3>
+<figure><img src="/architecture-diagram.png" height="550px">
+</figure>
+</section><section>
+<h3 id="cloud-architecture-1">cloud architecture</h3>
+<p>Microsoft Azure (Cloud Services)</p>
+<ul>
+<li>Application Layer</li>
+<li>Authentication Layer</li>
+<li>Database Layer</li>
+</ul>
+</section><section>
+<h3 id="cloud-architecture-2">cloud architecture</h3>
+<p>DevOps</p>
+<ul>
+<li>Infrastructure as Code</li>
+<li>CI/CD</li>
+<li>Monitoring</li>
+</ul>
+
+</section>
 </section>
 
   
