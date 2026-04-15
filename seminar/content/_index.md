@@ -230,3 +230,171 @@ DevOps
 - Monitoring
 
 {{% /section %}}
+
+---
+
+{{% section %}}
+
+## Project Progress
+
+---
+
+in the early weeks...
+
+- learning React Native
+- project set-up
+- codebase familiarisation + migration of code
+- looked into deployment for Web CSP
+
+---
+
+and most importantly,
+
+### **hi-fi prototyping in Figma**
+
+---
+
+from Lo-Fi designs in Thesis A
+
+{{<figure src="/lofi-design.png">}}
+
+---
+
+to Hi-Fi designs in Thesis B
+
+{{<figure src="/hifi-design.png">}}
+
+---
+
+all of the screens in Hi-Fi
+
+{{<figure src="/hifi-design-all.png">}}
+
+---
+
+in the later weeks...
+
+### mobile app development
+
+---
+
+### mobile app development
+
+- using React Native
+- integrate with FHIR standard for data retrieval
+
+{{% /section %}}
+
+---
+
+# DEMO
+
+---
+
+{{% section %}}
+
+## Technical Decisions
+
+---
+
+### user interface
+
+> recap: survivorship care does not end upon treatment completion
+
+{{% fragment %}}so, design must account for all ages{{% /fragment %}}
+
+---
+
+{{<figure src="/app-sample.png">}}
+
+{{% note %}}
+familiar - follows patterns from multiple apps
+
+intuitive
+
+modern and minimalist
+
+colourful and colour-coded
+{{% /note %}}
+
+---
+
+### navigation
+
+{{<figure src="/app-navigation.png">}}
+
+---
+
+### information displayed
+
+{{<figure src="/app-information.png">}}
+
+{{% note %}}
+dilemma of how much information to display to patients
+
+too much? patients may get paranoid of things that are actually normal/misunderstanding
+
+too little? patients do not know whats happening
+
+result - show everything. in cases of emergency where information is needed, its better to have all than to have some. they need to know whats happening, without having to generate the health passport every time
+{{% /note %}}
+
+---
+
+### recommendations
+
+{{<figure src="/app-recommendations.png">}}
+
+{{% note %}}
+provides additional information about the specific menu
+
+guides and information so that patients dont feel lost/confused
+
+warnings to make patients aware
+
+colour coded
+{{% /note %}}
+
+---
+
+so... there were some differences between the Hi-Fi prototype and the actual app
+
+{{% note %}}
+continuous improvements always made
+
+removed unnecessary information like recent activities, indicators in home page, full list of CSP fields in health passport page
+
+made the UI more clean, reducing clutters
+
+fixed how some fields were displayed, since data in Figma are quite short, while real data are longer and more complex than sample data
+
+added some missing fields - some that are computed directly in the app
+{{% /note %}}
+
+{{% /section %}}
+
+---
+
+{{% section %}}
+
+## Reflection
+
+> future work and project direction
+
+{{% /section %}}
+
+---
+
+{{% section %}}
+
+## Summary
+
+{{% /section %}}
+
+---
+
+{{% section %}}
+
+## questions?
+
+{{% /section %}}
