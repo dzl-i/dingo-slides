@@ -7,6 +7,8 @@ diag = "1%"
 [reveal_hugo]
 +++
 
+{{% section %}}
+
 ## Mobile Application for Cancer Survivorship Passport
 
 *Thesis B Seminar Presentation*
@@ -22,6 +24,16 @@ Don't forget to thank the audience.
 custom_theme = "reveal-hugo/themes/robot-lung.css"
 custom_theme = "reveal-hugo/themes/sunblind.css"
 {{% /note %}}
+
+---
+
+### before we start
+
+Please fill in this form
+
+https://forms.cloud.microsoft/r/jajWsH6PUD
+
+{{% /section %}}
 
 ---
 
@@ -97,9 +109,17 @@ treatments received such as chemotherapy doses, radiation fields, surgeries, and
 
 example: Survivorship Passport (SurPass) from EU
 
+{{% note %}}
+contains patient's personal information, diagnosis, treatments, and other information
+{{% /note %}}
+
 ---
 
 ### so, why is it important?
+
+{{% note %}}
+why is CSP important
+{{% /note %}}
 
 ---
 
@@ -119,12 +139,22 @@ what if they switch to another oncologist?
 
 {{% fragment %}}in a different country?{{% /fragment %}}
 
+{{% note %}}
+before i continue, here are some questions to think about
+
+switch to another oncologist - its fine, patient records can be easily transferred to new oncologist
+
+in a different hospital - medical records no longer easily accessible, doctors do not have context, but probably still quite possible to get medical records
+
+in a different country - very hard to get medical records
+{{% /note %}}
+
 ---
 
 ### clinicians
 
-- needs to know full context before they can suggest treatment
-- can ensure monitoring is consistent and coordinated
+- needs to know full context before they can suggest or proceed with treatment
+- want to ensure monitoring is consistent and coordinated
 
 ---
 
@@ -154,6 +184,12 @@ Cancer Survivorship Passport is the solution to these problems...
 
 {{% fragment %}}but, CSP is not too useful if only clinicians can access them and stored in a single hospital{{% /fragment %}}
 
+{{% note %}}
+now, we have established that CSP is the solution to these problems, and hence why they are important
+
+but ...
+{{% /note %}}
+
 ---
 
 ### problem statement
@@ -165,6 +201,10 @@ Existing cancer survivorship passports are primarily clinician-facing, leaving p
 ### solution
 
 a mobile version of the Cancer Survivorship Passport
+
+{{% note %}}
+which can be easily accessed by patients, from anywhere
+{{% /note %}}
 
 ---
 
@@ -196,7 +236,11 @@ a mobile version of the Cancer Survivorship Passport
 - Australian Privacy Act
 
 {{% note %}}
+medical applications need to adhere to standards and laws
+
 FHIR is the newer HL7 standard designed for modern web and mobile use. It represents clinical data as modular resources that can be exchanged using REST APIs and JSON or XML.
+
+privacy act to protect user's identity and to keep their information secure
 {{% /note %}}
 
 ---
@@ -205,11 +249,21 @@ FHIR is the newer HL7 standard designed for modern web and mobile use. It repres
 
 {{<figure src="/data-flow.png" height="550px">}}
 
+{{% note %}}
+this diagram shows how data moves around or gets transmitted
+- most important - survivors can read data from the database, which can be shared with hospitals and other clinicians
+- data can be input manually but also linked with electronic health records
+{{% /note %}}
+
 ---
 
 ### cloud architecture
 
 {{<figure src="/architecture-diagram.png" height="550px">}}
+
+{{% note %}}
+give background - say how cloud services and infrastructure is also part of thesis
+{{% /note %}}
 
 ---
 
@@ -220,6 +274,14 @@ Microsoft Azure (Cloud Services)
 - Authentication Layer
 - Database Layer
 
+{{% note %}}
+application layer includes App Service
+
+authentication layer includes Entra ID and Auth.js
+
+Database layer includes FHIR service, storage account, sql database
+{{% /note %}}
+
 ---
 
 ### cloud architecture
@@ -228,6 +290,14 @@ DevOps
 - Infrastructure as Code
 - CI/CD
 - Monitoring
+
+{{% note %}}
+IaC using Terraform
+
+CI/CD configured on GitHub
+
+monitoring using application insights from azure monitor
+{{% /note %}}
 
 {{% /section %}}
 
@@ -246,6 +316,10 @@ in the early weeks...
 - codebase familiarisation + migration of code
 - looked into deployment for Web CSP
 
+{{% note %}}
+project set-up took a long time due to config issues
+{{% /note %}}
+
 ---
 
 and most importantly,
@@ -257,6 +331,10 @@ and most importantly,
 from Lo-Fi designs in Thesis A
 
 {{<figure src="/lofi-design.png">}}
+
+{{% note %}}
+for overall structure and layout, more important for navigation
+{{% /note %}}
 
 ---
 
@@ -280,7 +358,7 @@ in the later weeks...
 
 ### mobile app development
 
-- using React Native
+- using React Native + Expo
 - integrate with FHIR standard for data retrieval
 
 {{% /section %}}
@@ -310,11 +388,11 @@ in the later weeks...
 {{% note %}}
 familiar - follows patterns from multiple apps
 
-intuitive
+intuitive - uses labels everywhere to ensure understanding
 
 modern and minimalist
 
-colourful and colour-coded
+colourful and colour-coded to increase familiarisation
 {{% /note %}}
 
 ---
@@ -322,6 +400,12 @@ colourful and colour-coded
 ### navigation
 
 {{<figure src="/app-navigation.png">}}
+
+{{% note %}}
+bottom tabs are inspired by outlook
+
+sidebar also inpired by outlook
+{{% /note %}}
 
 ---
 
@@ -377,9 +461,76 @@ added some missing fields - some that are computed directly in the app
 
 {{% section %}}
 
-## Reflection
+## Retrospective
 
-> future work and project direction
+> reflection, future work, and project direction
+
+---
+
+### challenges and response
+
+- ui/ux design
+- learning react native and native APIs
+  - integrating more features with native APIs (push notifications, calendar)
+- exploring cloud services
+- time management - could have done more work
+  - will dedicate more focus times next term
+
+{{% fragment %}}cloud services are still a **huge** challenge{{% /fragment %}}
+
+{{% note %}}
+coming up with a design that is applicable for all ages
+
+native API like the share/export tool in Health Passport
+{{% /note %}}
+
+---
+
+### thesis b timeline
+
+{{<figure src="/thesis-b-timeline.png" height="575px">}}
+
+{{% note %}}
+initial time spent on project set up, caused delays
+
+how the project evolved relative to the original plan - overall a good progress, finished development for more screens (mention) but was not able to complete deployment and infra setup
+
+why unit testing was not done - app is read-only, testing can be done visually without having to do unit testing
+
+feedback implementation always done, feedback from Peter
+
+why deployment was not done - for web, need to make sure local version is compatible with the mobile. otherwise, it will be pointless to have a deployment done for a broken app. also need to meet with the infra team
+{{% /note %}}
+
+---
+
+### thesis c timeline
+
+{{<figure src="/thesis-c-timeline.png" height="575px">}}
+
+{{% note %}}
+in thesis b, more focus on mobile development
+
+in thesis c, more focus on deployment and infrastructure
+
+usability testing will be conducted throughout the term, to improve UI and UX
+
+talk a bit more about the dev
+- finish integrating appointments and medications page with data from FHIR
+- new pages for care team, symptoms, test results
+- notifications that actually trigger push notifications
+- stretch goals - admin portal for clinicians to add in or edit therapies and medications
+  - now it is hardcoded in the web app (clinician facing)
+{{% /note %}}
+
+---
+
+### upskilling and resources needed
+
+- need to read up more on cloud services
+  - methods to implement them
+- how to use more native API
+- microsoft azure environment for infrastructure
 
 {{% /section %}}
 
@@ -388,6 +539,12 @@ added some missing fields - some that are computed directly in the app
 {{% section %}}
 
 ## Summary
+
+> key take-home message
+
+{{% note %}}
+mobile app for CSP will be beneficial for both patients and clinicians, as patients can easily keep track of their well-being and care, and clinicians can easily retrieve patient history which results in faster actions for patients
+{{% /note %}}
 
 {{% /section %}}
 
@@ -398,3 +555,17 @@ added some missing fields - some that are computed directly in the app
 ## questions?
 
 {{% /section %}}
+
+---
+
+## Thank you!
+
+Please fill in this form
+
+https://forms.cloud.microsoft/r/jajWsH6PUD
+
+<br>
+
+Christian Denzel Iskandar
+
+z5346200

@@ -28,18 +28,24 @@
       <div class="slides">
   
 
-    <section><h2 id="mobile-application-for-cancer-survivorship-passport">Mobile Application for Cancer Survivorship Passport</h2>
+    <section>
+
+<section data-shortcode-section>
+<h2 id="mobile-application-for-cancer-survivorship-passport">Mobile Application for Cancer Survivorship Passport</h2>
 <p><em>Thesis B Seminar Presentation</em></p>
 <br>
 <p>Christian Denzel Iskandar (z5346200)</p>
 <p>Supervisor: Dr. Peter Brown</p>
-
-
-
 <aside class="notes"><p>Don&rsquo;t forget to thank the audience.
 custom_theme = &ldquo;reveal-hugo/themes/robot-lung.css&rdquo;
 custom_theme = &ldquo;reveal-hugo/themes/sunblind.css&rdquo;</p>
 </aside>
+</section><section>
+<h3 id="before-we-start">before we start</h3>
+<p>Please fill in this form</p>
+<p><a href="https://forms.cloud.microsoft/r/jajWsH6PUD">https://forms.cloud.microsoft/r/jajWsH6PUD</a></p>
+
+</section>
 </section><section>
 
 
@@ -93,8 +99,12 @@ custom_theme = &ldquo;reveal-hugo/themes/sunblind.css&rdquo;</p>
 <figure><img src="/csp-example.png" height="550px">
 </figure>
 <p>example: Survivorship Passport (SurPass) from EU</p>
+<aside class="notes"><p>contains patient&rsquo;s personal information, diagnosis, treatments, and other information</p>
+</aside>
 </section><section>
 <h3 id="so-why-is-it-important">so, why is it important?</h3>
+<aside class="notes"><p>why is CSP important</p>
+</aside>
 </section><section>
 <h3 id="patients">patients</h3>
 <ul>
@@ -109,11 +119,16 @@ custom_theme = &ldquo;reveal-hugo/themes/sunblind.css&rdquo;</p>
 <p>what if they switch to another oncologist?</p>
 <p><span class='fragment ' >and if they are in a different hospital?</span></p>
 <p><span class='fragment ' >in a different country?</span></p>
+<aside class="notes"><p>before i continue, here are some questions to think about</p>
+<p>switch to another oncologist - its fine, patient records can be easily transferred to new oncologist</p>
+<p>in a different hospital - medical records no longer easily accessible, doctors do not have context, but probably still quite possible to get medical records</p>
+<p>in a different country - very hard to get medical records</p>
+</aside>
 </section><section>
 <h3 id="clinicians">clinicians</h3>
 <ul>
-<li>needs to know full context before they can suggest treatment</li>
-<li>can ensure monitoring is consistent and coordinated</li>
+<li>needs to know full context before they can suggest or proceed with treatment</li>
+<li>want to ensure monitoring is consistent and coordinated</li>
 </ul>
 </section><section>
 <h3 id="beyond-that">beyond that</h3>
@@ -140,12 +155,17 @@ custom_theme = &ldquo;reveal-hugo/themes/sunblind.css&rdquo;</p>
 </section><section>
 <p>Cancer Survivorship Passport is the solution to these problems&hellip;</p>
 <p><span class='fragment ' >but, CSP is not too useful if only clinicians can access them and stored in a single hospital</span></p>
+<aside class="notes"><p>now, we have established that CSP is the solution to these problems, and hence why they are important</p>
+<p>but &hellip;</p>
+</aside>
 </section><section>
 <h3 id="problem-statement">problem statement</h3>
 <p>Existing cancer survivorship passports are primarily clinician-facing, leaving patients without an accessible platform to view their health information, track medications, and manage long-term follow-up care.</p>
 </section><section>
 <h3 id="solution">solution</h3>
 <p>a mobile version of the Cancer Survivorship Passport</p>
+<aside class="notes"><p>which can be easily accessed by patients, from anywhere</p>
+</aside>
 </section><section>
 <h3 id="features">features</h3>
 <ul>
@@ -175,16 +195,26 @@ custom_theme = &ldquo;reveal-hugo/themes/sunblind.css&rdquo;</p>
 </li>
 <li>Australian Privacy Act</li>
 </ul>
-<aside class="notes"><p>FHIR is the newer HL7 standard designed for modern web and mobile use. It represents clinical data as modular resources that can be exchanged using REST APIs and JSON or XML.</p>
+<aside class="notes"><p>medical applications need to adhere to standards and laws</p>
+<p>FHIR is the newer HL7 standard designed for modern web and mobile use. It represents clinical data as modular resources that can be exchanged using REST APIs and JSON or XML.</p>
+<p>privacy act to protect user&rsquo;s identity and to keep their information secure</p>
 </aside>
 </section><section>
 <h3 id="data-flow">Data Flow</h3>
 <figure><img src="/data-flow.png" height="550px">
 </figure>
+<aside class="notes"><p>this diagram shows how data moves around or gets transmitted</p>
+<ul>
+<li>most important - survivors can read data from the database, which can be shared with hospitals and other clinicians</li>
+<li>data can be input manually but also linked with electronic health records</li>
+</ul>
+</aside>
 </section><section>
 <h3 id="cloud-architecture">cloud architecture</h3>
 <figure><img src="/architecture-diagram.png" height="550px">
 </figure>
+<aside class="notes"><p>give background - say how cloud services and infrastructure is also part of thesis</p>
+</aside>
 </section><section>
 <h3 id="cloud-architecture-1">cloud architecture</h3>
 <p>Microsoft Azure (Cloud Services)</p>
@@ -193,6 +223,10 @@ custom_theme = &ldquo;reveal-hugo/themes/sunblind.css&rdquo;</p>
 <li>Authentication Layer</li>
 <li>Database Layer</li>
 </ul>
+<aside class="notes"><p>application layer includes App Service</p>
+<p>authentication layer includes Entra ID and Auth.js</p>
+<p>Database layer includes FHIR service, storage account, sql database</p>
+</aside>
 </section><section>
 <h3 id="cloud-architecture-2">cloud architecture</h3>
 <p>DevOps</p>
@@ -201,6 +235,10 @@ custom_theme = &ldquo;reveal-hugo/themes/sunblind.css&rdquo;</p>
 <li>CI/CD</li>
 <li>Monitoring</li>
 </ul>
+<aside class="notes"><p>IaC using Terraform</p>
+<p>CI/CD configured on GitHub</p>
+<p>monitoring using application insights from azure monitor</p>
+</aside>
 
 </section>
 </section><section>
@@ -216,6 +254,8 @@ custom_theme = &ldquo;reveal-hugo/themes/sunblind.css&rdquo;</p>
 <li>codebase familiarisation + migration of code</li>
 <li>looked into deployment for Web CSP</li>
 </ul>
+<aside class="notes"><p>project set-up took a long time due to config issues</p>
+</aside>
 </section><section>
 <p>and most importantly,</p>
 <h3 id="hi-fi-prototyping-in-figma"><strong>hi-fi prototyping in Figma</strong></h3>
@@ -223,6 +263,8 @@ custom_theme = &ldquo;reveal-hugo/themes/sunblind.css&rdquo;</p>
 <p>from Lo-Fi designs in Thesis A</p>
 <figure><img src="/lofi-design.png">
 </figure>
+<aside class="notes"><p>for overall structure and layout, more important for navigation</p>
+</aside>
 </section><section>
 <p>to Hi-Fi designs in Thesis B</p>
 <figure><img src="/hifi-design.png">
@@ -237,7 +279,7 @@ custom_theme = &ldquo;reveal-hugo/themes/sunblind.css&rdquo;</p>
 </section><section>
 <h3 id="mobile-app-development-1">mobile app development</h3>
 <ul>
-<li>using React Native</li>
+<li>using React Native + Expo</li>
 <li>integrate with FHIR standard for data retrieval</li>
 </ul>
 
@@ -259,14 +301,17 @@ custom_theme = &ldquo;reveal-hugo/themes/sunblind.css&rdquo;</p>
 <figure><img src="/app-sample.png">
 </figure>
 <aside class="notes"><p>familiar - follows patterns from multiple apps</p>
-<p>intuitive</p>
+<p>intuitive - uses labels everywhere to ensure understanding</p>
 <p>modern and minimalist</p>
-<p>colourful and colour-coded</p>
+<p>colourful and colour-coded to increase familiarisation</p>
 </aside>
 </section><section>
 <h3 id="navigation">navigation</h3>
 <figure><img src="/app-navigation.png">
 </figure>
+<aside class="notes"><p>bottom tabs are inspired by outlook</p>
+<p>sidebar also inpired by outlook</p>
+</aside>
 </section><section>
 <h3 id="information-displayed">information displayed</h3>
 <figure><img src="/app-information.png">
@@ -299,10 +344,70 @@ custom_theme = &ldquo;reveal-hugo/themes/sunblind.css&rdquo;</p>
 
 
 <section data-shortcode-section>
-<h2 id="reflection">Reflection</h2>
+<h2 id="retrospective">Retrospective</h2>
 <blockquote>
-<p>future work and project direction</p>
+<p>reflection, future work, and project direction</p>
 </blockquote>
+</section><section>
+<h3 id="challenges-and-response">challenges and response</h3>
+<ul>
+<li>ui/ux design</li>
+<li>learning react native and native APIs
+<ul>
+<li>integrating more features with native APIs (push notifications, calendar)</li>
+</ul>
+</li>
+<li>exploring cloud services</li>
+<li>time management - could have done more work
+<ul>
+<li>will dedicate more focus times next term</li>
+</ul>
+</li>
+</ul>
+<p><span class='fragment ' >cloud services are still a <strong>huge</strong> challenge</span></p>
+<aside class="notes"><p>coming up with a design that is applicable for all ages</p>
+<p>native API like the share/export tool in Health Passport</p>
+</aside>
+</section><section>
+<h3 id="thesis-b-timeline">thesis b timeline</h3>
+<figure><img src="/thesis-b-timeline.png" height="575px">
+</figure>
+<aside class="notes"><p>initial time spent on project set up, caused delays</p>
+<p>how the project evolved relative to the original plan - overall a good progress, finished development for more screens (mention) but was not able to complete deployment and infra setup</p>
+<p>why unit testing was not done - app is read-only, testing can be done visually without having to do unit testing</p>
+<p>feedback implementation always done, feedback from Peter</p>
+<p>why deployment was not done - for web, need to make sure local version is compatible with the mobile. otherwise, it will be pointless to have a deployment done for a broken app. also need to meet with the infra team</p>
+</aside>
+</section><section>
+<h3 id="thesis-c-timeline">thesis c timeline</h3>
+<figure><img src="/thesis-c-timeline.png" height="575px">
+</figure>
+<aside class="notes"><p>in thesis b, more focus on mobile development</p>
+<p>in thesis c, more focus on deployment and infrastructure</p>
+<p>usability testing will be conducted throughout the term, to improve UI and UX</p>
+<p>talk a bit more about the dev</p>
+<ul>
+<li>finish integrating appointments and medications page with data from FHIR</li>
+<li>new pages for care team, symptoms, test results</li>
+<li>notifications that actually trigger push notifications</li>
+<li>stretch goals - admin portal for clinicians to add in or edit therapies and medications
+<ul>
+<li>now it is hardcoded in the web app (clinician facing)</li>
+</ul>
+</li>
+</ul>
+</aside>
+</section><section>
+<h3 id="upskilling-and-resources-needed">upskilling and resources needed</h3>
+<ul>
+<li>need to read up more on cloud services
+<ul>
+<li>methods to implement them</li>
+</ul>
+</li>
+<li>how to use more native API</li>
+<li>microsoft azure environment for infrastructure</li>
+</ul>
 
 </section>
 </section><section>
@@ -310,6 +415,11 @@ custom_theme = &ldquo;reveal-hugo/themes/sunblind.css&rdquo;</p>
 
 <section data-shortcode-section>
 <h2 id="summary">Summary</h2>
+<blockquote>
+<p>key take-home message</p>
+</blockquote>
+<aside class="notes"><p>mobile app for CSP will be beneficial for both patients and clinicians, as patients can easily keep track of their well-being and care, and clinicians can easily retrieve patient history which results in faster actions for patients</p>
+</aside>
 
 </section>
 </section><section>
@@ -319,6 +429,13 @@ custom_theme = &ldquo;reveal-hugo/themes/sunblind.css&rdquo;</p>
 <h2 id="questions">questions?</h2>
 
 </section>
+</section><section>
+<h2 id="thank-you">Thank you!</h2>
+<p>Please fill in this form</p>
+<p><a href="https://forms.cloud.microsoft/r/jajWsH6PUD">https://forms.cloud.microsoft/r/jajWsH6PUD</a></p>
+<br>
+<p>Christian Denzel Iskandar</p>
+<p>z5346200</p>
 </section>
 
   
